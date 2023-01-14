@@ -1,0 +1,14 @@
+<h3 mat-dialog-title>{{ "RU_SURE" | translate }}</h3>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">
+    {{ "NO_THANKS" | translate }}
+  </button>
+  <button
+    mat-raised-button
+    color="warn"
+    [mat-dialog-close]="data.animal"
+    cdkFocusInitial
+  >
+    {{ "YES" | translate }}
+  </button>
+</div>

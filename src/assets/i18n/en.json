@@ -1,0 +1,17 @@
+{
+  "HELLO": "hello {{value}}",
+  "POSTS": "Posts",
+  "YES": "Yes",
+  "SAVE": "Save",
+  "CANCEL": "Cancel",
+  "NO_THANKS": "No Thanks",
+  "RU_SURE": "Are you sure you want to delete this post ?",
+  "FORM": {
+    "CREATE_POST": "Create new post",
+    "EDIT_POST": "Edit this post",
+    "TITLE": "Title:",
+    "CHOOSE_IMG": "Choose Image:",
+    "DESC": "Description:",
+    "SELECT_TAGS": "Select Tags:"
+  }
+}

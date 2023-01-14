@@ -1,0 +1,27 @@
+<h1 mat-dialog-title>Create new post</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Title:</mat-label>
+    <input matInput />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Choose image:</mat-label>
+    <input matInput />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Description:</mat-label>
+    <input matInput />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Select tags:</mat-label>
+    <input matInput />
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">
+    {{ "NO_THANKS" | translate }}
+  </button>
+  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>
+    Ok
+  </button>
+</div>

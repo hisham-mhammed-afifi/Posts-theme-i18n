@@ -1,0 +1,33 @@
+<h1 mat-dialog-title>
+  {{ (true ? "FORM.CREATE_POST" : "FORM.EDIT_POST") | translate }}
+</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <mat-label>{{ "FORM.TITLE" | translate }}</mat-label>
+    <input matInput />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>{{ "FORM.CHOOSE_IMG" | translate }}</mat-label>
+    <input matInput />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>{{ "FORM.DESC" | translate }}</mat-label>
+    <input matInput />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>{{ "FORM.SELECT_TAGS" | translate }}</mat-label>
+    <input matInput />
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">{{ "CANCEL" | translate }}</button>
+  <button
+    mat-raised-button
+    color="primary"
+    [mat-dialog-close]="data.animal"
+    cdkFocusInitial
+  >
+    <mat-icon class="me-2">save</mat-icon>
+    {{ "SAVE" | translate }}
+  </button>
+</div>
