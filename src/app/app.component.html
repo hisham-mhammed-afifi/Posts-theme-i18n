@@ -10,7 +10,7 @@
     favorite
   </mat-icon>
   <button mat-icon-button (click)="toggleTheme()">
-    <mat-icon>{{ isDarkTheme ? "light" : "dark" }}_mode</mat-icon>
+    <mat-icon>{{ theme === "dark" ? "light" : "dark" }}_mode</mat-icon>
   </button>
   <button mat-icon-button (click)="toggleLang()">
     <mat-icon>translate</mat-icon>
@@ -18,38 +18,15 @@
 </mat-toolbar>
 
 <div class="container">
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>
-        This the first post {{ "HELLO" | translate : ayhaga }}
-      </mat-card-title>
-      <mat-card-subtitle>
-        #programing #angular #javascript #anything
-      </mat-card-subtitle>
-    </mat-card-header>
-    <img
-      mat-card-image
-      src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-      alt="Photo of a Shiba Inu"
-    />
-    <mat-card-content>
-      <p>
-        The Shiba Inu is the smallest of the six original and distinct spitz
-        breeds of dog from Japan. A small, agile dog that copes very well with
-        mountainous terrain, the Shiba Inu was originally bred for hunting.
-      </p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-icon-button>
-        <mat-icon color="warn">favorite_border</mat-icon>
-      </button>
-      <span class="spacer"></span>
-      <button mat-icon-button (click)="confirmDelete()">
-        <mat-icon color="warn">delete</mat-icon>
-      </button>
-      <button mat-icon-button (click)="openFormDialog()">
-        <mat-icon color="primary">edit</mat-icon>
-      </button>
-    </mat-card-actions>
-  </mat-card>
+  <div *ngIf="posts.length; else noPosts">
+    <app-post
+      *ngFor="let post of posts"
+      [addedToFavorite]="addedToFavorite(post)"
+      (editPost)="openFormDialog()"
+    ></app-post>
+  </div>
+
+  <ng-template #noPosts>
+    <h2 class="no-posts">{{ "NO_POSTS" | translate }}</h2>
+  </ng-template>
 </div>

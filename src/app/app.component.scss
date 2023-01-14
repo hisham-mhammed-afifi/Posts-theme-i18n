@@ -4,6 +4,10 @@
   padding: 10px;
 }
 
-mat-card-actions {
-  display: flex;
+.no-posts {
+  font-weight: bolder;
+  color: #aaa;
+  text-align: center;
+  margin-top: 5rem;
+  letter-spacing: 1px;
 }

@@ -11,13 +11,14 @@ import { MaterialModule } from './material.module';
 import { DialogComponent } from './dialog/dialog.component';
 import { FormDialogComponent } from './form-dialog/form-dialog.component';
 import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
+import { PostComponent } from './post/post.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
 
 @NgModule({
-  declarations: [AppComponent, DialogComponent, FormDialogComponent, DeleteDialogComponent],
+  declarations: [AppComponent, DialogComponent, FormDialogComponent, DeleteDialogComponent, PostComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
