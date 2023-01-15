@@ -21,7 +21,8 @@
   <div *ngIf="posts.length; else noPosts">
     <app-post
       *ngFor="let post of posts"
-      [addedToFavorite]="addedToFavorite(post)"
+      [post]="post"
+      [addedToFavorite]="addedToFavorite(post._id)"
       (editPost)="openFormDialog()"
     ></app-post>
   </div>

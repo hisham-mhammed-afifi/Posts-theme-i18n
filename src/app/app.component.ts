@@ -3,6 +3,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { MatDialog } from '@angular/material/dialog';
 import { FormDialogComponent } from './form-dialog/form-dialog.component';
 import { LocalStorageService } from './services/local-storage.service';
+import { Post, PostsService } from './services/posts.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,7 @@ import { LocalStorageService } from './services/local-storage.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  posts = [];
+  posts: Post[] = [];
   theme: string = 'light';
   lang: string = 'en';
   currentDir: string = 'ltr';
@@ -18,15 +19,23 @@ export class AppComponent implements OnInit {
   constructor(
     private translate: TranslateService,
     private dialog: MatDialog,
-    private lsSrv: LocalStorageService
+    private lsSrv: LocalStorageService,
+    private postsSrv: PostsService
   ) {}
 
   ngOnInit(): void {
     this.setDefaultTheme();
     this.setDefaultLang();
+    this.getAllPosts();
   }
 
-  addedToFavorite(postId: number): boolean {
+  getAllPosts() {
+    this.postsSrv.allPosts().subscribe((res) => {
+      this.posts = res.data;
+    });
+  }
+
+  addedToFavorite(postId: string): boolean {
     return true;
   }
 
