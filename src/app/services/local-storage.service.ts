@@ -30,15 +30,15 @@ export class LocalStorageService {
     localStorage.setItem('theme', JSON.stringify(mode));
   }
 
-  get theme() {
-    return JSON.parse(localStorage.getItem('theme') ?? 'light');
+  get theme(): string {
+    return JSON.parse(localStorage.getItem('theme') as string);
   }
 
   setLang(lang: string) {
     localStorage.setItem('lang', JSON.stringify(lang));
   }
 
-  get lang() {
-    return JSON.parse(localStorage.getItem('lang') ?? 'en');
+  get lang(): string {
+    return JSON.parse(<string>localStorage.getItem('lang'));
   }
 }

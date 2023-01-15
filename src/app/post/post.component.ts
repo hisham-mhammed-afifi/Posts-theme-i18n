@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DeleteDialogComponent } from '../delete-dialog/delete-dialog.component';
+import { Post } from '../services/posts.service';
 
 @Component({
   selector: 'app-post',
@@ -8,6 +9,7 @@ import { DeleteDialogComponent } from '../delete-dialog/delete-dialog.component'
   styleUrls: ['./post.component.scss'],
 })
 export class PostComponent implements OnInit {
+  @Input() post!: Post;
   @Input() addedToFavorite: boolean = false;
   @Output() editPost = new EventEmitter();
 

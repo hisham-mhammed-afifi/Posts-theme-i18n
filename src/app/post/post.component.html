@@ -1,8 +1,11 @@
 <mat-card style="margin-bottom: 1rem">
   <mat-card-header>
-    <mat-card-title> This the first post </mat-card-title>
+    <mat-card-title>{{ post.title }}</mat-card-title>
     <mat-card-subtitle>
       #programing #angular #javascript #anything
+    </mat-card-subtitle>
+    <mat-card-subtitle>
+      Created at {{ post.createdAt | date : "medium" }}
     </mat-card-subtitle>
   </mat-card-header>
   <img
@@ -12,9 +15,7 @@
   />
   <mat-card-content>
     <p>
-      The Shiba Inu is the smallest of the six original and distinct spitz
-      breeds of dog from Japan. A small, agile dog that copes very well with
-      mountainous terrain, the Shiba Inu was originally bred for hunting.
+      {{ post.description }}
     </p>
   </mat-card-content>
   <mat-card-actions>
