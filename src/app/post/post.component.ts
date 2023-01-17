@@ -31,4 +31,8 @@ export class PostComponent implements OnInit {
       console.log('The dialog was closed');
     });
   }
+
+  handleMissingImage(event: Event) {
+    (event.target as HTMLImageElement).src = 'assets/placeholder.png';
+  }
 }

@@ -5,7 +5,9 @@ import { Observable } from 'rxjs';
 export interface Post {
   _id: string;
   title: string;
-  tags: string;
+  imgId: string;
+  postImg: string;
+  tags: string[];
   description: string;
   createdAt: string;
 }

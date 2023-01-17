@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
@@ -18,7 +19,13 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 @NgModule({
-  declarations: [AppComponent, DialogComponent, FormDialogComponent, DeleteDialogComponent, PostComponent],
+  declarations: [
+    AppComponent,
+    DialogComponent,
+    FormDialogComponent,
+    DeleteDialogComponent,
+    PostComponent,
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -32,6 +39,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     }),
     BrowserAnimationsModule,
     MaterialModule,
+    NgOptimizedImage,
   ],
   providers: [],
   bootstrap: [AppComponent],

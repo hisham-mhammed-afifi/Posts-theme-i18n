@@ -2,7 +2,7 @@
   <mat-card-header>
     <mat-card-title>{{ post.title }}</mat-card-title>
     <mat-card-subtitle>
-      #programing #angular #javascript #anything
+      #<span *ngFor="let tag of post.tags">{{ tag }} </span>
     </mat-card-subtitle>
     <mat-card-subtitle>
       Created at {{ post.createdAt | date : "medium" }}
@@ -10,8 +10,9 @@
   </mat-card-header>
   <img
     mat-card-image
-    src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-    alt="Photo of a Shiba Inu"
+    [src]="post.postImg"
+    [alt]="post.postImg"
+    (error)="handleMissingImage($event)"
   />
   <mat-card-content>
     <p>
