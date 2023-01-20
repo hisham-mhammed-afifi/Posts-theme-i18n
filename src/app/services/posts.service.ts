@@ -29,4 +29,8 @@ export class PostsService {
   allPosts(): Observable<PostsResponse> {
     return this._http.get<PostsResponse>(this.BaseURL + '/posts');
   }
+
+  deletePost(postId: string): Observable<any> {
+    return this._http.delete<any>(this.BaseURL + '/posts/removepost/' + postId);
+  }
 }

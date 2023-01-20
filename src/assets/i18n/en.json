@@ -13,6 +13,7 @@
     "TITLE": "Title:",
     "CHOOSE_IMG": "Choose Image:",
     "DESC": "Description:",
-    "SELECT_TAGS": "Select Tags:"
+    "SELECT_TAGS": "Select Tags:",
+    "CHOOSE_IMG": "Choose image ..."
   }
 }

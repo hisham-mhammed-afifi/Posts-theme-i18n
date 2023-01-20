@@ -6,17 +6,24 @@
     <mat-label>{{ "FORM.TITLE" | translate }}</mat-label>
     <input matInput />
   </mat-form-field>
-  <mat-form-field>
-    <mat-label>{{ "FORM.CHOOSE_IMG" | translate }}</mat-label>
-    <input matInput />
-  </mat-form-field>
+  <div class="upload-img">
+    <input #uploadImg type="file" accept=".png, .jpg, .jpeg" hidden />
+    <button mat-button color="accent" (click)="uploadImg.click()">
+      <mat-icon class="me-2">upload</mat-icon>
+      {{ "FORM.CHOOSE_IMG" | translate }}
+    </button>
+    <p>you image.png</p>
+  </div>
   <mat-form-field>
     <mat-label>{{ "FORM.DESC" | translate }}</mat-label>
-    <input matInput />
+    <textarea matInput rows="5"></textarea>
   </mat-form-field>
   <mat-form-field>
     <mat-label>{{ "FORM.SELECT_TAGS" | translate }}</mat-label>
-    <input matInput />
+    <mat-select multiple>
+      <mat-option value="one">First option</mat-option>
+      <mat-option value="two">Second option</mat-option>
+    </mat-select>
   </mat-form-field>
 </div>
 <div mat-dialog-actions>

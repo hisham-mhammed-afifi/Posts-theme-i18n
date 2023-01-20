@@ -9,10 +9,12 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 export class DeleteDialogComponent implements OnInit {
   constructor(
     private dialogRef: MatDialogRef<DeleteDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any
+    @Inject(MAT_DIALOG_DATA) public yes: boolean
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.yes = true;
+  }
 
   onNoClick(): void {
     this.dialogRef.close();

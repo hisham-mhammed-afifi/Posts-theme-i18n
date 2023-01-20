@@ -50,6 +50,12 @@ export class AppComponent implements OnInit {
     });
   }
 
+  deletePost(postId: string) {
+    this.postsSrv.deletePost(postId).subscribe((res) => {
+      console.log(res);
+    });
+  }
+
   setDefaultTheme() {
     this.theme = this.lsSrv.theme;
     if (this.theme === 'dark') {

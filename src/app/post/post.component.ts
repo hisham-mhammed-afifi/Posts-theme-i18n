@@ -12,6 +12,7 @@ export class PostComponent implements OnInit {
   @Input() post!: Post;
   @Input() addedToFavorite: boolean = false;
   @Output() editPost = new EventEmitter();
+  @Output() deletePost = new EventEmitter();
 
   constructor(private dialog: MatDialog) {}
 
@@ -23,12 +24,13 @@ export class PostComponent implements OnInit {
 
   confirmDelete(): void {
     const dialogRef = this.dialog.open(DeleteDialogComponent, {
-      data: { name: 'ana hesham' },
       maxWidth: '425px',
     });
 
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log('The dialog was closed');
+    dialogRef.afterClosed().subscribe((yes) => {
+      if (yes) {
+        this.deletePost.emit(this.post._id);
+      }
     });
   }
 

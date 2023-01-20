@@ -24,6 +24,7 @@
       [post]="post"
       [addedToFavorite]="addedToFavorite(post._id)"
       (editPost)="openFormDialog()"
+      (deletePost)="deletePost($event)"
     ></app-post>
   </div>
 

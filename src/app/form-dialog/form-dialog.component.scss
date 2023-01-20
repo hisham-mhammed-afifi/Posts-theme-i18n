@@ -1,3 +1,14 @@
 mat-form-field {
   width: 100%;
 }
+
+.upload-img {
+  display: flex;
+  justify-content: space-between;
+}
+.upload-img p {
+  margin-top: 1rem;
+  margin-inline-end: 1rem;
+  text-align: center;
+  vertical-align: middle;
+}
