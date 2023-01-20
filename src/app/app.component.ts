@@ -1,12 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { MatDialog } from '@angular/material/dialog';
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
 import { FormDialogComponent } from './form-dialog/form-dialog.component';
 import { LocalStorageService } from './services/local-storage.service';
 import { Post, PostsService } from './services/posts.service';
 
 @Component({
   selector: 'app-root',
+  animations: [
+    trigger('addRemove', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'translateY(50%)' }),
+        animate('500ms', style({ opacity: 1, transform: 'translateY(0)' })),
+      ]),
+      transition(':leave', [
+        animate('500ms', style({ opacity: 0, transform: 'translateX(100%)' })),
+      ]),
+    ]),
+  ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
@@ -51,9 +69,9 @@ export class AppComponent implements OnInit {
   }
 
   deletePost(postId: string) {
-    this.postsSrv.deletePost(postId).subscribe((res) => {
-      console.log(res);
-    });
+    this.posts = this.posts.filter((p) => p._id !== postId);
+    // this.postsSrv.deletePost(postId).subscribe((res) => {
+    // });
   }
 
   setDefaultTheme() {
