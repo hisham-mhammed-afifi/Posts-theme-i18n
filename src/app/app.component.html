@@ -18,7 +18,7 @@
 </mat-toolbar>
 
 <div class="container">
-  <div *ngIf="posts.length; else noPosts">
+  <div *ngIf="posts.length">
     <app-post
       @addRemove
       *ngFor="let post of posts"
@@ -29,7 +29,9 @@
     ></app-post>
   </div>
 
-  <ng-template #noPosts>
+  <ng-template *ngIf="posts.length && !showSpinner">
     <h2 class="no-posts">{{ "NO_POSTS" | translate }}</h2>
   </ng-template>
 </div>
+
+<app-spinner *ngIf="showSpinner"></app-spinner>

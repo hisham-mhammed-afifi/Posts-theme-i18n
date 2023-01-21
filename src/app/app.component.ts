@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { MatDialog } from '@angular/material/dialog';
 import {
@@ -33,6 +33,9 @@ export class AppComponent implements OnInit {
   theme: string = 'light';
   lang: string = 'en';
   currentDir: string = 'ltr';
+  showSpinner = false;
+
+  @ViewChild('spinner') spinner!: ElementRef<any>;
 
   constructor(
     private translate: TranslateService,
@@ -48,8 +51,10 @@ export class AppComponent implements OnInit {
   }
 
   getAllPosts() {
+    this.showSpinner = true;
     this.postsSrv.allPosts().subscribe((res) => {
       this.posts = res.data;
+      this.showSpinner = false;
     });
   }
 

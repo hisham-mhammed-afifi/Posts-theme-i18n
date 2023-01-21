@@ -13,6 +13,7 @@ import { DialogComponent } from './dialog/dialog.component';
 import { FormDialogComponent } from './form-dialog/form-dialog.component';
 import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
 import { PostComponent } from './post/post.component';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -25,6 +26,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     FormDialogComponent,
     DeleteDialogComponent,
     PostComponent,
+    SpinnerComponent,
   ],
   imports: [
     BrowserModule,
