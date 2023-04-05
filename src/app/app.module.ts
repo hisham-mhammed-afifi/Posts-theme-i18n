@@ -14,6 +14,7 @@ import { FormDialogComponent } from './form-dialog/form-dialog.component';
 import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
 import { PostComponent } from './post/post.component';
 import { SpinnerComponent } from './spinner/spinner.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -40,6 +41,8 @@ export function HttpLoaderFactory(http: HttpClient) {
       },
     }),
     BrowserAnimationsModule,
+    ReactiveFormsModule,
+    FormsModule,
     MaterialModule,
     NgOptimizedImage,
   ],

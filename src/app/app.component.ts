@@ -69,7 +69,9 @@ export class AppComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      console.log('The dialog was closed');
+      const formData = new FormData();
+      result.postImg = formData.append('postImg', result.postImg);
+      console.log(result);
     });
   }
 

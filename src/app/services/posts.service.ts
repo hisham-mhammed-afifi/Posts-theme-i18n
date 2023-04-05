@@ -30,6 +30,10 @@ export class PostsService {
     return this._http.get<PostsResponse>(this.BaseURL + '/posts');
   }
 
+  addPost(data: Post): Observable<any> {
+    return this._http.post<any>(this.BaseURL + '/posts', data);
+  }
+
   deletePost(postId: string): Observable<any> {
     return this._http.delete<any>(this.BaseURL + '/posts/removepost/' + postId);
   }
